@@ -96,3 +96,15 @@ categoriesDiv.addEventListener("click", (event) => {
 
 //by default showing all courses
 showCourses(1000);
+
+//sorting courses by views
+const sortCourses = async () => {
+    const res = await fetch(
+        "https://openapi.programming-hero.com/api/videos/category/1000"
+    );
+    const data = await res.json();
+    console.log(data.data);
+    const sortedCourses = data.data.sort((a, b) => parseInt(b.others.views) - parseFloat(a.others.views)
+    );
+    showCoursesUI(sortedCourses);
+};
