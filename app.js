@@ -32,6 +32,9 @@ const showCourses = async (categoryid) => {
     showCoursesUI(data.data);
 };
 
+//convert posted time to minutes and hours ago
+
+
 //showing courses in UI
 showCoursesUI = (courses) => {
     coursesDiv.innerHTML = "";
@@ -39,11 +42,25 @@ showCoursesUI = (courses) => {
         ? courses.forEach((course) => {
             const courseDiv = document.createElement("div");
             courseDiv.innerHTML = `
-            <img src=${course.thumbnail} alt=${course.title} style="width: 20rem; height: 15rem;"/>
+            <p class="posted-date">${(course.others.posted_date / 3600).toFixed(2)} hrs ago</p>
+            <img src=${course.thumbnail} alt=${course.title
+                } class="course-thumbnail"/>
             <div class="course-info">
-                <img src=${course.authors[0].profile_picture} alt=${course.authors[0].profile_name} style="width: 3rem; height: 3rem; border-radius: 50%;"/>
-                <h3>${course.title}</h3>
+                <img src=${course.authors[0].profile_picture} alt=${course.authors[0].profile_name
+                } class="author-img"/>
+                <div>
+                    <h3>${course.title}</h3>
+                    <div class="author-info">
+                        <div class="author-name">
+                            <p>${course.authors[0].profile_name}</p>
+                            <p class="verified">${course.authors[0].verified ? "✔" : ""
+                }</p>
+                        </div>
+                        <p class="views">${course.others.views} views</p>
+                    </div>
+                </div>
             </div>
+            <div></div>
         `;
             coursesDiv.appendChild(courseDiv);
         })
@@ -76,3 +93,6 @@ categoriesDiv.addEventListener("click", (event) => {
         }
     });
 });
+
+//by default showing all courses
+showCourses(1000);

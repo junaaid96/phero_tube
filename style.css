@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+
+* {
+    font-family: "Noto Serif", serif;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -40,14 +46,57 @@ button:not(#blog-btn) {
     gap: 50px;
 }
 
+.course-thumbnail {
+    width: 20rem;
+    height: 15rem;
+}
+
 .course-info {
     display: flex;
-    justify-items: center;
-    align-items: center;
     gap: 20px;
 }
 
-.not-available{
+.author-img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.author-info {
+    color: gray;
+}
+
+.author-name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: -20px;
+}
+
+.verified {
+    color: white;
+    font-weight: 800;
+    background-color: #2b91f7;
+    border-radius: 50%;
+    padding: 0 5px;
+}
+
+.views {
+    margin-top: -10px;
+}
+
+.posted-date {
+    background-color: #171717;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px;
+    position: absolute;
+    margin-top: 210px;
+    margin-left: 5px;
+}
+
+.not-available {
     display: flex;
     flex-direction: column;
     justify-content: center;
