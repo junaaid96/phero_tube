@@ -1,0 +1,56 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
+
+button:not(#blog-btn) {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+#blog-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    color: white !important;
+    background-color: #ff1f3d !important;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 2% 0;
+    margin-bottom: 20px;
+}
+
+.course-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.course-info {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.not-available{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
